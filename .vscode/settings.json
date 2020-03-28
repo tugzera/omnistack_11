@@ -1,0 +1,47 @@
+{
+    // Define o tema do VSCode.
+    "workbench.colorTheme": "Dracula",
+    "breadcrumbs.enabled": true,
+    "workbench.colorCustomizations": {
+      "activityBar.activeBorder": "#FF79C6",
+      "activityBar.activeBackground": "#44475A"
+    },
+  
+    // Configuração para o ESLint.
+    "javascript.format.enable": false,
+    "editor.formatOnSave": true,
+  
+    // Configura o verificador ortográfico.
+    "cSpell.enabled": true,
+    "cSpell.language": "en-US, pt-BR",
+  
+    // Configura o verificador LaTeX.
+    "ltex.enabled": true,
+    "ltex.language": "pt-BR",
+    "ltex.diagnosticSeverity": "error",
+  
+    // Configura tamanho e família da fonte.
+    "editor.fontSize": 16,
+    "editor.lineHeight": 24,
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+  
+    // Aplica linhas verticais para lembrar de quebrar linha em códigos muito grandes.
+    "editor.rulers": [80, 120],
+  
+    // Aplica um sinal visual na esquerda da linha selecionada.
+    "editor.renderLineHighlight": "gutter",
+  
+    // Aumenta a fonte do terminal.
+    "terminal.integrated.fontSize": 14,
+  
+    // Habilita o experimental decorators
+    "javascript.implicitProjectConfig.experimentalDecorators": true,
+  
+    // Habilita cSpell.
+    "cSpell.ignoreWords": [
+    ],
+    "cSpell.words": [
+    ]
+  }
+  

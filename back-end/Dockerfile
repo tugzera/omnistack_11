@@ -1,6 +1,5 @@
 #import image from node / alpine is a tiny image
 FROM node:12.4.0-alpine
-
 ################################################### PRODUCTION MODE ##################################################################################
 
 #create a node module folders and set the permission of the folder

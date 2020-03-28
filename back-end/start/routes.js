@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +14,12 @@
 */
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
-const Route = use('Route')
+const Route = use("Route");
 
-Route.resource('ongs', 'OngController').apiOnly()
+Route.resource("ongs", "OngController").apiOnly();
+Route.resource("clients", "ClientController").apiOnly();
+Route.resource("users", "UserController").apiOnly();
+Route.resource("roles", "RoleController").apiOnly();
 
+Route.post("login", "AuthController.login");
+Route.get("logout", "AuthController.logout").middleware("auth");

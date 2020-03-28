@@ -1,42 +1,41 @@
-version: '3'
+version: "3"
 
 services:
-   
-    #Generate API server
-    adonis-server:
-        #find my docker file to build the server
-        build:
-            #dockerfile to build 
-            dockerfile: ./Dockerfile
-            #my dir to start the commands
-            context: ./back-end
-        #setting up the container name
-        container_name: adonis-server
-        #volumes:  #     #COMMENT VOLUMES ON PRODCUTION MODE
-        #    - ./backend:/home/node/backend/
-        #port to use
-        ports:
-            - "3333:3333"
-        #network to use on containers
-        networks:
-            - jupiter
+  #Generate API server
+  adonis-server:
+    #find my docker file to build the server
+    build:
+      #dockerfile to build
+      dockerfile: ./Dockerfile
+      #my dir to start the commands
+      context: ./back-end
+    #setting up the container name
+    container_name: adonis-server
+    #volumes:  #     #COMMENT VOLUMES ON PRODCUTION MODE
+    #    - ./backend:/home/node/backend/
+    #port to use
+    ports:
+      - "3333:3333"
+    #network to use on containers
+    networks:
+      - jupiter
 
-    #Generate Frontend Server
-    # react-server:
-    #     build: 
-    #         dockerfile: ./Dockerfile
-    #         context: ./front-end
-    #     container_name: react-server
-    #     #IMPORTANT -> Using the "-" is to say to the docker compose that it's an array of instance
-    #     volumes:                                #COMMENT VOLUMES ON PRODUCTION MODE
-    #         - ./front-end:/home/node/front-end/
-    #     ports:
-    #         - "3000:3000"
-    #     networks: 
-    #         - jupiter
-    #     depends_on:
-    #         - adonis-server
-    
-networks: 
-    jupiter:
-        driver: bridge
+  #Generate Frontend Server
+  # react-server:
+  #     build:
+  #         dockerfile: ./Dockerfile
+  #         context: ./front-end
+  #     container_name: react-server
+  #     #IMPORTANT -> Using the "-" is to say to the docker compose that it's an array of instance
+  #     volumes:                                #COMMENT VOLUMES ON PRODUCTION MODE
+  #         - ./front-end:/home/node/front-end/
+  #     ports:
+  #         - "3000:3000"
+  #     networks:
+  #         - jupiter
+  #     depends_on:
+  #         - adonis-server
+
+networks:
+  jupiter:
+    driver: bridge
