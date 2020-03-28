@@ -21,7 +21,7 @@ class UserController {
 
   async store({ request }) {
     const data = request.only(["email", "password"]);
-    const roles = request.only("roles");
+    const { roles } = request.only("roles");
 
     const item = await User.create(data);
     if (roles) {
