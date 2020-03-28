@@ -4,7 +4,7 @@ FROM node:12.4.0-alpine
 ################################################### PRODUCTION MODE ##################################################################################
 
 #create a node module folders and set the permission of the folder
-# RUN mkdir -p /home/node/backend/node_modules/ && chown -R node:node /home/node/backend  
+# RUN mkdir -p /home/node/back-end/node_modules/ && chown -R node:node /home/node/back-end  
 
 #setting the work directory folder
 # WORKDIR /home/node/backend 
@@ -26,7 +26,7 @@ FROM node:12.4.0-alpine
 
 ############################################################ DEV MODE  ############################################################################
 #setting the work directory folder
-WORKDIR /home/node/backend
+WORKDIR /home/node/back-end
 
 #install adonis-cli
 RUN npm i -g @adonisjs/cli -y

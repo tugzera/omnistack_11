@@ -9,7 +9,7 @@ services:
             #dockerfile to build 
             dockerfile: ./Dockerfile
             #my dir to start the commands
-            context: ./backend
+            context: ./back-end
         #setting up the container name
         container_name: adonis-server
         #volumes:  #     #COMMENT VOLUMES ON PRODCUTION MODE
@@ -20,46 +20,23 @@ services:
         #network to use on containers
         networks:
             - jupiter
-        depends_on:
-            mysql-db
 
     #Generate Frontend Server
-    react-server:
-        build: 
-            dockerfile: ./Dockerfile
-            context: ./frontend
-        container_name: react-server
-        #IMPORTANT -> Using the "-" is to say to the docker compose that it's an array of instance
-        volumes:                                #COMMENT VOLUMES ON PRODUCTION MODE
-            - ./frontend:/home/node/frontend/
-        ports:
-            - "3000:3000"
-        networks: 
-            - jupiter
-        depens_on:
-            - adonis-server
-    #Generate MYSQL server
-    mysql-db:
-        #Latest Version of Mysql on Dockerhub
-        image: mysql:latest
-        #identify the container name
-        container_name: mysql-db
-        #mysql server configurations
-        environment: 
-            - MYSQL_USER = docker
-            - MYSQL_PASSWORD = docker
-            - MYSQL_DATABASE = docker
-            - MYSQL_ROOT_PASSWORD = docker
-        #used volumes to persist data on up or kill container [HIGHLY IMPORTANT!!]
-        volumes: 
-            - ./database:/var/lib/mysql
-        #ports to run the service
-        ports:
-            - "3306:3306"
-        #network to use on containers
-        networks: 
-            - jupiter
-
+    # react-server:
+    #     build: 
+    #         dockerfile: ./Dockerfile
+    #         context: ./front-end
+    #     container_name: react-server
+    #     #IMPORTANT -> Using the "-" is to say to the docker compose that it's an array of instance
+    #     volumes:                                #COMMENT VOLUMES ON PRODUCTION MODE
+    #         - ./front-end:/home/node/front-end/
+    #     ports:
+    #         - "3000:3000"
+    #     networks: 
+    #         - jupiter
+    #     depends_on:
+    #         - adonis-server
+    
 networks: 
     jupiter:
         driver: bridge
